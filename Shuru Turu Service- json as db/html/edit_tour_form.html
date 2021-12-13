@@ -1,0 +1,75 @@
+<!-- index.html -->
+<!doctype html>
+<html>
+
+<head>
+    <title>Edit a tour</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <!-- load bootstrap via CDN -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
+    "></script> <!-- load jquery via CDN -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="/js/edit_tour_utils.js">
+    </script> <!-- load our javascript file -->
+</head>
+
+<body>
+    <div class="col-sm-6 col-sm-offset-3">
+
+        <h1 id="title">Edit a tour</h1>
+
+        <!-- OUR FORM -->
+        <form id="add_tour_form" name="add_tour_form" method="PUT">
+
+            <!-- Start date -->
+            <div id="name-group" class="form-group">
+                <label for="start_date">Tour start date (follow the date format)</label>
+                <input type="date" class="form-control" name="start_date" id="start_date"
+                    placeholder="Enter new tour start date here" required>
+            </div>
+
+            <!-- Duration -->
+            <div id="name-group" class="form-group">
+                <label for="duration">Duration</label>
+                <input type="number" class="form-control" name="duration" id="duration"
+                    placeholder="Enter new duration here" required>
+            </div>
+
+
+            <!-- Price -->
+            <div id="name-group" class="form-group">
+                <label for="price">Price</label>
+                <input type="number" class="form-control" name="price" id="price" placeholder="Enter new price here"
+                    required>
+            </div>
+
+            <!-- Guide name -->
+            <div id="name-group" class="form-group">
+                <label for="guide_name">Guide-name</label>
+                <input type="text" class="form-control" name="guide_name" id="guide_name"
+                    placeholder="Enter new guide name here" required>
+            </div>
+
+            <!-- Guide email -->
+            <div id="email-group" class="form-group">
+                <label for="guide_email">Guide-email</label>
+                <input type="email" class="form-control" name="guide_email" id="guide_email"
+                    placeholder="rudd@avengers.com" required>
+            </div>
+
+
+            <!-- Guide cellular -->
+            <div id="name-group" class="form-group">
+                <label for="guide_cellular">Guide-cellular</label>
+                <input type="text" class="form-control" name="guide_cellular" id="guide_cellular"
+                    placeholder="Enter new guide cellular here" required>
+            </div>
+
+            <button type="submit" class="btn btn-success">Submit <span class="fa fa-arrow-right"></span></button>
+
+        </form>
+
+    </div>
+</body>
+
+</html>

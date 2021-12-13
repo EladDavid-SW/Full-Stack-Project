@@ -1,0 +1,30 @@
+{
+  "name": "shuru-turu-service",
+  "version": "1.0.0",
+  "description": "An information service about different contries tour orgenized by Shuru Ture &co.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api",
+    "node",
+    "api-server",
+    "express",
+    "starter",
+    "kit"
+  ],
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongodb": "^3.5.8",
+    "mongoose": "^5.9.17",
+    "validator": "^10.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

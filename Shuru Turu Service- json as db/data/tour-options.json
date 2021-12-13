@@ -1,0 +1,29 @@
+{
+  "Europe2": {
+    "start_date": "01-06-2021",
+    "duration": 5,
+    "price": 3500,
+    "guide": {
+      "name": "Sara L",
+      "email": "sarah@gmail.com",
+      "cellular": "3333333"
+    },
+    "path": [
+      {
+        "name": "Millano",
+        "country": "Italy"
+      }
+    ]
+  },
+  "A": {
+    "start_date": "31-03-3333",
+    "duration": 33,
+    "price": 33,
+    "guide": {
+      "name": "isix",
+      "email": "ff@domai",
+      "cellular": "11111111"
+    },
+    "path": []
+  }
+}
