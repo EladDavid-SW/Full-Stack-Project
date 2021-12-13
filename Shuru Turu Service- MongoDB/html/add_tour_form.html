@@ -1,0 +1,102 @@
+<!-- index.html -->
+<!doctype html>
+<html>
+
+<head>
+    <title>Add a tour</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <!-- load bootstrap via CDN -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
+    "></script> <!-- load jquery via CDN -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="/js/add_tour_utils.js">
+    </script> <!-- load our javascript file -->
+    <script>
+        function getGuide() {
+
+            $.ajax({
+                url: "http://localhost:3001/guides",
+                dataType: "json",
+                success: function (res) {
+                    let guides_json_format = res;
+                    let guide_str;
+                    for (let json of guides_json_format)
+                        guide_str += " <option value=" + json["_id"] + "> " + json["name"] + "</option>"
+
+                    $("#guides").append(guide_str)
+                },
+                error: function (err) {
+                    console.log("err", err);
+                }
+            });
+
+        }
+        $(document).ready(function () {
+            getGuide()
+        })
+
+    </script>
+</head>
+
+<body>
+    <div class="col-sm-6 col-sm-offset-3">
+
+        <h1>Add new tour</h1>
+
+        <!-- OUR FORM -->
+        <form id="add_tour_form" name="add_tour_form" method="POST">
+
+            <!-- Tour name -->
+            <div id="name-group" class="form-group">
+                <label for="tour_name">Tour name</label>
+                <input type="text" class="form-control" name="tour_name" id="tour_name"
+                    placeholder="Enter tour name here" required>
+            </div>
+
+            <!-- Start date -->
+            <div id="name-group" class="form-group">
+                <label for="start_date">Tour start date (follow the date format)</label>
+                <input type="date" class="form-control" name="start_date" id="start_date"
+                    placeholder="Enter tour start date here" required>
+            </div>
+
+            <!-- Duration -->
+            <div id="name-group" class="form-group">
+                <label for="duration">Duration</label>
+                <input type="number" class="form-control" name="duration" id="duration"
+                    placeholder="Enter duration here" required>
+            </div>
+
+
+            <!-- Price -->
+            <div id="name-group" class="form-group">
+                <label for="price">Price</label>
+                <input type="number" class="form-control" name="price" id="price" placeholder="Enter price here"
+                    required>
+            </div>
+
+            <!-- Guide name
+            <div id="name-group" class="form-group">
+                <label for="guide_id">Guide-id</label>
+                <input type="text" class="form-control" name="guide_id" id="guide_id" placeholder="Enter guide id here"
+                    required>
+            </div> -->
+
+            <!-- Guide -->
+            <div id="name-group" class="form-group">
+                <label for="guide">Guide</label>
+                <select id="guides" required>
+                    <option value="" disabled selected>"Select guide here"</option>
+                </select>
+
+                <!-- errors will go here -->
+            </div>
+
+            <button type="submit" class="btn btn-success">Submit <span class="fa fa-arrow-right"></span></button>
+
+        </form>
+
+    </div>
+</body>
+
+</html>
